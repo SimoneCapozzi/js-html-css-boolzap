@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app" class="container">
+    
+    <aside class="left">
+
+      <header>
+
+        <div class="nome-utente">
+
+          <img src="img/avatar_io.jpg" alt="utante">
+
+          <span>Nome Utente</span>
+
+        </div>
+
+        <div class="icon-nomeUtente">
+          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+        
+      </header>
+
+
+      <section>
+
+        <div class="notifiche">
+
+          <div class="bell-slash">
+            <i class="fas fa-bell-slash"></i>
+          </div>
+
+          <div>
+            <h4>Ricevi notifiche di nuovi messaggi</h4>
+            <h5>Attiva notifiche desktop</h5>
+          </div>
+
+        </div>
+          
+        <div class="search">
+
+          <i class="fas fa-search"></i>
+          <input type="search" placeholder="Cerca o inizia una nuova ricerca">
+
+        </div>
+
+        <div class="contatti">
+          <ul>
+
+            <li
+              v-for="(contact, index) in contacts"
+            >
+              <img :src="contact.img" alt="avatar-1">
+              <span>{{contact.nome}}</span>
+            </li>
+
+            <!-- <li>
+              <img src="img/avatar_2.jpg" alt="avatar-1">
+              <span>Fabio</span>
+            </li>
+
+            <li>
+              <img src="img/avatar_3.jpg" alt="avatar-1">
+              <span>Samuele</span>
+            </li>
+
+            <li>
+              <img src="img/avatar_4.jpg" alt="avatar-1">
+              <span>Luisa</span>
+            </li> -->
+
+          </ul>
+        </div>
+
+      </section> 
+
+      <footer></footer>
+
+    </aside>
+
+    <main class="right"> <!-- ------------------------------------------------- -->
+
+      <header>
+        <img src="img/avatar_1.jpg" alt="">
+
+        <div class="utente-attivo">
+          <h4>Michele</h4>
+          <h5>Ultimo accesso oggi alle</h5>
+        </div>
+
+        <div class="icon_utente-attivo">
+          <i class="fas fa-search"></i>
+          <i class="fas fa-paperclip"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+
+      </header>
+
+      <section><!-- ---------------------- messaggi------------------- -->
+
+        <div class="row-inviato">
+          <div class="mex-inviato">
+            <span></span>
+          </div>
+        </div>
+
+        <div class="row-ricevuto">
+          <div class="mex-ricevuto">
+            <span></span>
+          </div>
+        </div>
+
+      </section><!-- ---------------------- messaggi fine------------------- -->
+
+      <footer>
+
+        <div class="icon-smile">
+          <i class="far fa-smile"></i>
+        </div>
+
+        <div class="input-messaggio">
+          <input type="text" placeholder="Scrivi un messaggio">
+        </div>
+
+        <div class="icon-audio">
+          <i class="fas fa-microphone"></i>
+        </div>
+      </footer>
+
+    </main>
+
+
+
+  </div>
+  
+
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
