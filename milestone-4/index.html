@@ -65,7 +65,9 @@
         <div class="search">
 
           <i class="fas fa-search"></i>
-          <input type="search" placeholder="Cerca o inizia una nuova ricerca">
+          <input type="search" placeholder="Cerca o inizia una nuova ricerca"
+          v-model="lettereInserite"
+          >
 
         </div>
 
@@ -75,12 +77,16 @@
             <li
               v-for="(contact, index) in contacts"
               @click="utenteSelezionato = index" 
+              :class="contact.name.toLowerCase().includes(lettereInserite.toLowerCase()) ? 'show' : 'hide'"
             >
               <img :src="contact.img" alt="avatar-1">
-              <span>{{contact.name}}</span>
-              <span>{{contact.messages[contact.messages.length-1].text}}</span>
-              <span>{{contact.messages[contact.messages.length-1].date}}</span>
+              <div>
+                <span class="nome-contatto">{{contact.name}}</span>
+                <span class="ultimo-mex">{{contact.messages[contact.messages.length-1].text}}</span>
+              </div>
+              <span class="data-utimoMex">{{contact.messages[contact.messages.length-1].date}}</span>
             </li>
+
 
             <!-- <li>
               <img src="img/avatar_2.jpg" alt="avatar-1">
@@ -134,7 +140,7 @@
             <span>{{message.text}}</span>
             <span class="data-ora">{{message.date}}</span>
             <div class="freccia-bassa">
-              <i class="freccia-bassa fas fa-angle-down"></i>
+              <i class="fas fa-angle-down"></i>
             </div>
           </div>
         </div>

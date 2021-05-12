@@ -182,18 +182,42 @@ body{
   overflow: auto;
 }
 
-.container .left section ul{
+.container .left section .contatti ul{
   height: 100%;
 }
 
-.container .left section ul li{
+.container .left section .contatti ul li{
   list-style: none;
   height: 80px;
   display: flex;
   border-bottom: 1px solid #D8D8D8;
+  position: relative;
 }
 
-.container .left section ul li:last-child{
+.container .left section .contatti ul li:hover{
+  background-color: #EAEAEA;
+}
+
+
+.container .left section .contatti ul li div{
+  display: flex;
+  flex-direction: column;
+}
+
+.container .left section .contatti ul li .data-utimoMex{
+  margin-left: 5px;
+}
+
+.container .left section .contatti ul li.show{
+  display: flex;
+}
+
+.container .left section .contatti ul li.hide{
+  display: none;
+}
+
+
+.container .left section .contatti ul li:last-child{
   border-bottom: none;
 }
 
@@ -209,6 +233,22 @@ body{
   padding-top: 10px;
   padding-left: 10px;
 }
+
+.container .left section .contatti ul li .ultimo-mex{
+  font-size: 12px;
+  color: #B1B1B1;
+  
+}
+
+.container .left section .contatti ul li .data-utimoMex{
+  color: #B1B1B1;
+  font-size: 12px;
+  display: flex;
+  position: absolute;
+  right: 0px;
+}
+
+
 /* /lista contatti */
 
 /* /container left secction */
@@ -285,6 +325,7 @@ body{
   position: relative;
 }
 
+
 .container .right section .mex-ricevuto{
   padding: 15px 10px;
   min-width: 300px;
@@ -314,6 +355,15 @@ body{
   top: 0px;
   right: 5px;
   padding-left: 5px;
+  display: none;
+}
+
+.container .right section .mex-inviato:hover .freccia-bassa{
+  display: inline-block;
+}
+
+.container .right section .mex-ricevuto:hover .freccia-bassa{
+  display: inline-block;
 }
 
 
